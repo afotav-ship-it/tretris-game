@@ -2,13 +2,25 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 		<title>Tretris</title>
+		<!-- iOS PWA settings -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="apple-mobile-web-app-title" content="Tretris">
+		<!-- Android Chrome settings -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#1a1a2e">
+		<!-- Prevent text selection and callouts on touch -->
+		<meta name="format-detection" content="telephone=no">
 		<style>
 html, body, #canvas {
 	margin: 0;
 	padding: 0;
 	border: 0;
+	/* Handle notched devices */
+	padding-left: env(safe-area-inset-left);
+	padding-right: env(safe-area-inset-right);
 }
 
 body {
@@ -16,6 +28,14 @@ body {
 	background-color: black;
 	overflow: hidden;
 	touch-action: none;
+	/* Prevent pull-to-refresh and bounce on iOS */
+	overscroll-behavior: none;
+	-webkit-overflow-scrolling: touch;
+	/* Prevent text selection */
+	-webkit-user-select: none;
+	user-select: none;
+	/* Prevent touch callouts */
+	-webkit-touch-callout: none;
 }
 
 #canvas {
@@ -112,7 +132,7 @@ body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":67864,"index.wasm":38034280},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"serviceWorker":"index.service.worker.js"};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":65704,"index.wasm":38034280},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"serviceWorker":"index.service.worker.js"};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
