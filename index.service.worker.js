@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1767962985|1762711';
+const CACHE_VERSION = '1767963782|1737641';
 /** @type {string} */
 const CACHE_PREFIX = 'Tretris-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
